@@ -76,7 +76,7 @@
 							</header>
 
 							<p>
-								Partning with RJMT Vending will enable a fully managed vending solution to your building. 
+								Partnering with RJMT Vending will enable a fully managed vending solution to your building. 
 								We will stock with popular brands and manage the equipment in order to provide an experience to satisfy customers. Our machines will be accepting cash and card payments. We'll also track inventory so we're aware when to stock and what.
 
 							</p>
@@ -147,20 +147,31 @@
 								<h2>Contact</h2>
 							</header>
 
-							<p>If you're interested in having our vending machines in your area, please contact us with details.</p>
+							<p>If you're interested in having our vending machines in your area, please contact us with details in the form below or email us at rjmtvending@gmail.com.</p>
 
 							<form method="post" action="#">
 								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" id="name" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" id="email" name="email" placeholder="Email" /></div>
 									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
+										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<div class="col-12">
-										<input type="submit" value="Send Message" />
+										<input type="submit" onclick="sendEmail()" value="Send Message" />
 									</div>
 								</div>
 							</form>
+						
+							<script>
+								function sendEmail() {
+								const name = document.getElementById("name").value;
+								const email = document.getElementById("email").value;
+								const message = document.getElementById("message").value;
+							
+								const mailtoLink = "mailto:rjmtvending@gmail.com?subject=Message from " + name + "&body=" + message + " - Email: " + email;
+								window.location.href = mailtoLink;
+								}
+							</script>
 
 						</div>
 					</section>

@@ -1,0 +1,9 @@
+name: My Workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      API_KEY: ${{ secrets.EMAILAPIKEY }}
+      SERVICE_ID: ${{ secrets.SERVICEID }}
+      TEMPLATE_ID: ${{ secrets.TEMPLATEID }}

@@ -178,10 +178,10 @@ Test the form by entering a valid email address in the "To" field, a subject and
 
 				<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 				<script>
-				(function() {
-					const apiKey = process.env.API_KEY;
-					emailjs.init(apiKey);
-				})();
+				(function(apiKey) {
+				emailjs.init(apiKey);
+				})(process.env.API_KEY);
+
 
 				function sendEmail(event) {
 					event.preventDefault();

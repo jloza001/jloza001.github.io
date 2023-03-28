@@ -7,3 +7,13 @@ jobs:
       API_KEY: ${{ secrets.EMAILAPIKEY }}
       SERVICE_ID: ${{ secrets.SERVICEID }}
       TEMPLATE_ID: ${{ secrets.TEMPLATEID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build

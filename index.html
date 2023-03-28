@@ -178,12 +178,9 @@ Test the form by entering a valid email address in the "To" field, a subject and
 
 				<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 				<script>
-				(function() {
-					emailjs.init(process.env.API_KEY);
-				})();
-
-				function sendEmail(event) {
+					function sendEmail(event) {
 					event.preventDefault();
+					emailjs.init(process.env.API_KEY);
 
 					// Get form values
 					const to = "rjmtvending@gmail.com";

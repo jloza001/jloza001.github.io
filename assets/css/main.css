@@ -1904,6 +1904,17 @@ input, select, textarea {
 		border: 0;
 	}
 
+/* Message-Container after the form */
+#message-container {
+	background-color: transparent;
+	border: none;
+	color: #333;
+	padding: 10px;
+	margin-top: 10px;
+	font-weight: bold;
+	text-align: center;
+  }  
+
 /* Table */
 
 	table {

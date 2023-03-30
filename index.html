@@ -161,61 +161,19 @@
 									</div>
 								</div>
 							</form>
-
-				<!-- JavaScript code to send email using emailJS API 
-				If you prefer to use a free email API service, you can use the emailJS API. Here's an example of how to use the emailJS API to send an email from your webpage:
-
-Sign up for a free emailJS account at https://www.emailjs.com/.
-
-Create a new emailJS service and email template with the email content you want to send. Make sure to replace the placeholders in the email template with variables that will be set in your JavaScript code.
-
-Include the following JavaScript code in your webpage:
-
-Replace YOUR_EMAILJS_USER_ID, YOUR_EMAILJS_SERVICE_ID, and YOUR_EMAILJS_TEMPLATE_ID with the values from your emailJS account.
-
-Test the form by entering a valid email address in the "To" field, a subject and a message, and clicking the "Send Email" button. You should see an alert message indicating whether the email was sent successfully or not.-->
-
-
-				<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-				<script>
-					function sendEmail(event) {
-					event.preventDefault();
-					emailjs.init(process.env.API_KEY);
-
-					// Get form values
-					const to = "rjmtvending@gmail.com";
-					const subject = "From the webpage";
-					const message = document.getElementById("message").value;
-
-					// Send email using emailJS API
-					const templateParams = {
-					to_email: to,
-					subject: subject,
-					message: message,
-					};
-					const serviceid = process.env.SERVICE_ID;
-					const templateid = process.env.TEMPLATE_ID;
-					emailjs.send(serviceid, templateid, templateParams)
-					.then((response) => {
-						console.log("Email sent:", response.status, response.text);
-						alert("Email sent!");
-					}, (error) => {
-						console.error("Email error:", error);
-						alert("Failed to send email");
-					});
-				}
-				</script>
 						
-							<!-- <script>
+							<script>
 								function sendEmail() {
 								const name = document.getElementById("name").value;
 								const email = document.getElementById("email").value;
 								const message = document.getElementById("message").value;
 							
-								const mailtoLink = "mailto:rjmtvending@gmail.com?subject=Message from " + name + "&body=" + message + " - Email: " + email;
+								const mailtoLink = "mailto:rjmtvending@gmail.com" +
+								"?subject=Message from " + name + "%0D%0A" +
+								"&body=" + message + " - Email: " + email;
 								window.location.href = mailtoLink;
 								}
-							</script> -->
+							</script>
 
 						</div>
 					</section>

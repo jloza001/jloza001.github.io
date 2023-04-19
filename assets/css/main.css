@@ -1794,13 +1794,18 @@ input, select, textarea {
 /* List */
 
 	ul {
-		list-style: disc;
-		padding-left: 1em;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
 
 		ul li {
 			padding-left: 0.5em;
 		}
+		li:first-child {
+			font-weight: bold;
+			color: blue;
+		  }
 
 	ol {
 		list-style: decimal;
